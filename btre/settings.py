@@ -153,3 +153,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'rufatsb@code.edu.az'
 EMAIL_HOST_PASSWORD = '19052015MaaGs1998'
 EMAIL_USE_TLS = True
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
