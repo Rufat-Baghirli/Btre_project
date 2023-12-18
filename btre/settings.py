@@ -34,12 +34,15 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
+    'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +131,25 @@ STATICFILES_DIRS = [Path.joinpath(BASE_DIR,'btre/static')]
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Media Folder Settings
+
+MEDIA_ROOT = (Path.joinpath(BASE_DIR,'media'))
+MEDIA_URL = '/media/'
+
+# Messages
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+
+}
+
+# Email config
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'rufatsb@code.edu.az'
+EMAIL_HOST_PASSWORD = '19052015MaaGs1998'
+EMAIL_USE_TLS = True
